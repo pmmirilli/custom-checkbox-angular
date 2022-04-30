@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-custom-checkbox',
@@ -6,10 +6,15 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./custom-checkbox.component.scss']
 })
 export class CustomCheckboxComponent {
-  @Input() checked: boolean = false;
   @Input() label: string = 'Checkbox';
+  @Output() checkedState: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  private checked: boolean = true;
   private checkbox: HTMLElement | null = document.getElementById("checkbox");
+
+  emitCheckedState() {
+    this.checkedState.emit(this.checked);
+  }
 
   setCheckedState(): void {
     if (this.checked) {
@@ -19,6 +24,7 @@ export class CustomCheckboxComponent {
       this.checkbox?.removeAttribute("checked");
       console.log('Checkbox state: unchecked'); /////
     }
+    this.emitCheckedState();
   }
 
   onClick(): void {
