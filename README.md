@@ -50,7 +50,7 @@ Este é um componente em Angular de caixa de seleção (checkbox) personalizáve
 
 1. Copie a pasta e seu conteúdo para o local de sua preferência no projeto.
 2. Adicione a linha 'CustomCheckboxComponent' às 'declarations' no arquivo 'app.module.ts'.
-3. Como de costume, lembre-se de importar o componente do caminho correto. A maioria dos editores de código séries fará isso por conta própria.
+3. Como de costume, lembre-se de importar o componente do caminho correto. A maioria dos editores de código sérios fará isso por conta própria.
 4. No template pai, use a tag `<app-custom-ckeckbox></app-custom-ckeckbox>` para inserir o elemento HTML.
 5. Use o atributo `label="(rótulo da checkbox desejado)"` para renomear a sua checkbox customizável.
 6. Use o atributo `(checkedState)="getCheckedState($event)"` para pegar o estado 'marcado/desmarcado' no componente pai.
