@@ -14,14 +14,15 @@ This is an experimental Angular customizable checkbox component that I made by c
 3. As usual, remember to import the component from the proper file path. Most serious code editors will do this on their own.
 4. In the parent template, use the tag `<app-custom-ckeckbox></app-custom-ckeckbox>` to insert the HTML element.
 5. Use the attribute `label="(desired checkbox label)"` to rename your custom checkbox.
-6. Use the attribute `(checkedState)="getCheckedState($event)"` to get the 'checked/unchecked' state in the parent component.
-7. The HTML line will look like this:
+6. Use the attribute `[default]="true"` to set the checkbox to be 'checked' by default. You can either set it to 'false' or not use the attribute at all to set it to 'unchecked' by default.
+7. Use the attribute `(checkedState)="getCheckedState($event)"` to get the 'checked/unchecked' state in the parent component.
+8. The HTML line will look like this:
 
 ```
-<app-custom-checkbox label="(desired checkbox label)" (checkedState)="getCheckedState($event)"></app-custom-checkbox>
+<app-custom-checkbox label="(desired checkbox label)" [default]="true" (checkedState)="getCheckedState($event)"></app-custom-checkbox>
 ```
 
-8. In the parent TS file, use the following:
+9. In the parent TS file, use the following:
 
 ```
 export class ParentComponent {
@@ -33,9 +34,9 @@ export class ParentComponent {
 }
 ```
 
-9.  Done. Now 'isChecked' reports as the true/false (checked/unchecked) state of that particular custom checkbox.
+10.  Done. Now 'isChecked' reports as the true/false (checked/unchecked) state of that particular custom checkbox.
 
-Lengthy and hardly very practical, I know, but I am still figuring out my way through this. Next step is finding a way to externally set the default true/false state. Actually, I already know how to do this, but can't get the SCSS part to act accordingly.
+Lengthy and hardly very practical, I know, but I am still figuring out my way through this. Next step is finding a way to make it better.
 <br>
 <br>
 <br>
@@ -53,14 +54,15 @@ Este é um componente em Angular de caixa de seleção (checkbox) personalizáve
 3. Como de costume, lembre-se de importar o componente do caminho correto. A maioria dos editores de código sérios fará isso por conta própria.
 4. No template pai, use a tag `<app-custom-ckeckbox></app-custom-ckeckbox>` para inserir o elemento HTML.
 5. Use o atributo `label="(rótulo da checkbox desejado)"` para renomear a sua checkbox customizável.
-6. Use o atributo `(checkedState)="getCheckedState($event)"` para pegar o estado 'marcado/desmarcado' no componente pai.
-7. A linha em HTML ficará assim:
+6. Use o atributo `[default]="true"` para definir a checkbox como 'marcada' por padrão. Você pode ou definir para 'false' ou apenas não usar o atributo para definir como 'desmarcada' por padrão.
+7. Use o atributo `(checkedState)="getCheckedState($event)"` para pegar o estado 'marcado/desmarcado' no componente pai.
+8. A linha em HTML ficará assim:
 
 ```
-<app-custom-checkbox label="(rótulo da checkbox desejado)" (checkedState)="getCheckedState($event)"></app-custom-checkbox>
+<app-custom-checkbox label="(rótulo da checkbox desejado)" [default]="true" (checkedState)="getCheckedState($event)"></app-custom-checkbox>
 ```
 
-8. No arquivo TS pai, use o seguinte:
+9. No arquivo TS pai, use o seguinte:
 
 ```
 export class ParentComponent {
@@ -72,6 +74,6 @@ export class ParentComponent {
 }
 ```
 
-9. Pronto. Agora, 'isChecked' responde como o estado true/false (marcado/desmarcado) dessa checkbox personalizável em particular.
+10. Pronto. Agora, 'isChecked' responde como o estado true/false (marcado/desmarcado) dessa checkbox personalizável em particular.
 
-Demorado e não muito prático, eu sei, mas ainda estou descobrindo como fazer isso. O próximo passo é encontrar uma maneira de ajustar externamente o estado true/false padrão. Na verdade, eu já sei como fazer, mas não consigo fazer a parte do SCSS agir de acordo.
+Demorado e não muito prático, eu sei, mas ainda estou descobrindo como fazer isso. O próximo passo é encontrar uma maneira de fazer isso melhor.
